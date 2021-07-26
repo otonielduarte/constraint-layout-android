@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ConstraintLayoutAndroid</string>
+    <string name="appbar_name">Constraint</string>
+    <string name="images_desc">image of place</string>
+</resources>
