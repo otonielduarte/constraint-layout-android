@@ -1,20 +1,22 @@
 package com.otoniel.constraintlayoutandroid.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import com.otoniel.constraintlayoutandroid.R
 import com.otoniel.constraintlayoutandroid.data.PlacesDAO
 import com.otoniel.constraintlayoutandroid.model.Model
+import com.otoniel.constraintlayoutandroid.ui.PackageDetailsActivity
 import com.otoniel.constraintlayoutandroid.utils.CurrencyFormat
 import com.otoniel.constraintlayoutandroid.utils.ResourcesUtil
-import java.math.BigDecimal
-import java.text.NumberFormat
-import java.util.*
+
 
 
 class MyAdapter(private var context: Context) : BaseAdapter() {
@@ -36,6 +38,7 @@ class MyAdapter(private var context: Context) : BaseAdapter() {
         val inflated = getView(parent)
         val model: Model = getItem(position)
         bindFields(inflated, model)
+        inflated.setOnClickListener { navigateDoDetails(model) }
         return inflated
     }
 
@@ -47,21 +50,19 @@ class MyAdapter(private var context: Context) : BaseAdapter() {
 
         image.setImageDrawable(ResourcesUtil.getDrawable(context, model.image))
         city.text = model.city
-        days.text = getFormattedDay(model.days)
-        price.text = CurrencyFormat.getMoney(model.price)
-    }
-
-    private fun getFormattedDay(days: Int):String {
-        var sufix = " days";
-        if(days == 1) {
-            sufix = " day"
-        }
-        return days.toString().plus(sufix)
+        days.text = model.getDaysString()
+        price.text = model.getFormattedPrice()
     }
 
     private fun getView(parent: ViewGroup?): View {
         return LayoutInflater
             .from(context)
-            .inflate(R.layout.item, parent, false)
+            .inflate(R.layout.item, parent, false);
+    }
+
+    private fun navigateDoDetails(clicked: Model) {
+        val intent = Intent(context, PackageDetailsActivity::class.java)
+        intent.putExtra("packageClicked", clicked)
+        ContextCompat.startActivity(context, intent, null)
     }
 }

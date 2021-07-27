@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PackageDetailsActivity">
+
+    <ImageView
+        android:id="@+id/packageImage"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:contentDescription="@string/image_package_description"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sao_paulo_sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/packageCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/packageImage"
+        tools:text="São Paulo" />
+
+    <TextView
+        android:id="@+id/packageDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@id/packageCity"
+        app:layout_constraintTop_toBottomOf="@id/packageCity"
+        tools:text="2 dias" />
+
+    <TextView
+        android:id="@+id/packageDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/packagePrice"
+        app:layout_constraintStart_toStartOf="@id/packageDays"
+        app:layout_constraintTop_toBottomOf="@id/packageDays"
+        tools:text="08/12 - 10/12 de 2021" />
+
+    <TextView
+        android:id="@+id/packagePrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toBottomOf="@id/packageDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/packageDate"
+        android:layout_marginEnd="8dp"
+        tools:text="R$ 1.234,56" />
+
+    <TextView
+        android:id="@+id/priceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/final_price_description"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/packagePrice"
+        app:layout_constraintRight_toRightOf="@id/packagePrice" />
+
+
+    <Button
+        android:id="@+id/btnPayments"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="@string/btn_payment"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

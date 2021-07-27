@@ -2,4 +2,10 @@
     <string name="app_name">ConstraintLayoutAndroid</string>
     <string name="appbar_name">Constraint</string>
     <string name="images_desc">image of place</string>
+    <string name="final_price_description">total price</string>
+    <string name="image_package_description">background image package</string>
+    <string name="appbar_details_package">Package details</string>
+    <string name="btn_payment">Go to payment</string>
+    <string name="value_buy">Product value</string>
+    <string name="payment_acitivy_title">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
 </resources>
