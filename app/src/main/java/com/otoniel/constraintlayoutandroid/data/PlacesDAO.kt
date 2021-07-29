@@ -6,7 +6,7 @@ import kotlin.collections.ArrayList
 
 
 class PlacesDAO {
-    fun lista(): ArrayList<Model> {
+    fun list(): ArrayList<Model> {
         return ArrayList<Model>(
             listOf(
                 Model("São Paulo", "sao_paulo_sp", 2, BigDecimal(243.99)),

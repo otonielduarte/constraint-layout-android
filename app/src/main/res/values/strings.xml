@@ -8,4 +8,16 @@
     <string name="btn_payment">Go to payment</string>
     <string name="value_buy">Product value</string>
     <string name="payment_acitivy_title">Digite as informações do cartão de crédito que você deseja usar para o pagamento</string>
+    <string name="card_number_text">card number</string>
+    <string name="card_month">MM</string>
+    <string name="card_number_year">YY</string>
+    <string name="card_number_cvv">CVV</string>
+    <string name="card_hold_name">Card hold name</string>
+    <string name="button_payment_name">Make payment</string>
+    <string name="payment_letters">ABCDEFGHIJKLMNOPQRSTUVXYZW\u0020</string>
+    <string name="order_resume_title">Congratulations</string>
+    <string name="order_resume_subtitle">Your order was successful :)</string>
+    <string name="order_resume_centered_message">See all order info:</string>
+    <string name="appbar_order_resume">Order resume</string>
+    <string name="appbar_payment">Payment</string>
 </resources>
